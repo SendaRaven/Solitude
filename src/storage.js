@@ -20,7 +20,7 @@ class Storage {
     }
   
     canUseLocalStorage() {
-      var test = "test";
+      let test = "test";
   
       try {
         localStorage.setItem(test, test);

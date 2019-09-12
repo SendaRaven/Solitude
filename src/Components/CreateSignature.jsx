@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 
-
 class CreateSignature extends Component {
     constructor() {
         super()
@@ -41,7 +40,13 @@ class CreateSignature extends Component {
             email: this.state.email,
         }
         console.log(signature);
-        this.props.newSignature(signature)
+        this.props.newSignature(this.props.petitionId,signature)
+
+        this.setState({
+            firstName: "",
+            lastName: "",
+            email: "",
+        })
     }
 
     render() {
