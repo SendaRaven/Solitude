@@ -40,7 +40,7 @@ class CreateSignature extends Component {
             email: this.state.email,
         }
         console.log(signature);
-        this.props.newSignature(this.props.petitionId,signature)
+        this.props.newSignature(this.props.petitionId, signature)
 
         this.setState({
             firstName: "",
@@ -52,9 +52,7 @@ class CreateSignature extends Component {
     render() {
         return (
             <div>
-                <h3>
-                    Sign this Petition
-    </h3>
+                <h3>Sign this Petition</h3>
                 <Form>
                     <FormGroup>
                         <Label for="firstname">First Name</Label>
@@ -63,7 +61,6 @@ class CreateSignature extends Component {
                     <FormGroup>
                         <Label for="lastname">Last Name</Label>
                         <Input type="text" id="lastname" placeholder="Your last name" value={this.state.lastName} onChange={this.handleLastNameChange} />
-
                     </FormGroup>
                     <FormGroup>
                         <Label for="email">Email</Label>

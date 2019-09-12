@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from 'reactstrap';
+import {Jumbotron, Button } from 'reactstrap';
 import { Redirect } from 'react-router-dom'
 
 
@@ -22,11 +22,10 @@ export default class Home extends Component {
     }
 
     render() {
-        return (<div>
+        return (<Jumbotron className="text-center">
             {this.renderRedirect()}
             <h1>Solitude – Online Petition Platform </h1>
             <Button color="primary" onClick={this.handleRedirect}>Create Petition</Button>
-            <hr />
-        </div>);
+        </Jumbotron>);
     }
 }

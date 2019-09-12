@@ -8,7 +8,6 @@ export default class PetitionView extends Component {
         const petition = this.props.location.state.petition;
         return (
 
-
             <Card className="body">
                 <CardHeader>{petition.title}</CardHeader>
                 <CardBody>
@@ -38,10 +37,7 @@ export default class PetitionView extends Component {
                         </tbody>
                     </Table>
                 </CardFooter>
-                < CreateSignature newSignature={this.props.newSignature} petitionId={petition.id}/>
-
-
-
+                < CreateSignature newSignature={this.props.newSignature} petitionId={petition.id} />
             </Card>
 
         )
