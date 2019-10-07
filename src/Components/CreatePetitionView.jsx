@@ -34,23 +34,25 @@ export default class CreatePetitionView extends Component {
         this.props.newPetition(petitions);
     };
     render() {
-        return (<div className="body">
-            <h1>
-                Create a Petition
+        return (
+            <div className="container">
+                <h1>
+                    Create a Petition
       </h1>
-            <Form>
-                <FormGroup>
-                    <Label for="title">Title</Label>
-                    <Input type="text" id="title" placeholder="Write your title" value={this.state.title} onChange={this.handleTitleChange} />
-                </FormGroup>
-                <FormGroup>
-                    <Label for="description">Description</Label>
-                    <Input type="textarea" name="text" id="description" onChange={this.handleDescriptionChange} placeholder="Write a description for your petition" value={this.state.description} />
+                <Form>
+                    <FormGroup>
+                        <Label for="title">Title</Label>
+                        <Input type="text" id="title" placeholder="Write your title" value={this.state.title} onChange={this.handleTitleChange} />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="description">Description</Label>
+                        <Input type="textarea" name="text" id="description" onChange={this.handleDescriptionChange} placeholder="Write a description for your petition" value={this.state.description} />
 
-                </FormGroup>
-                <Button color="secondary" onClick={this.handleSubmitButton}>Create</Button>
-            </Form>
-            <hr />
-        </div>);
+                    </FormGroup>
+                    <Button color="secondary" onClick={this.handleSubmitButton}>Create</Button>
+                </Form>
+                <hr />
+            </div>
+        );
     }
 }
