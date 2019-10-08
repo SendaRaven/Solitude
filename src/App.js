@@ -1,6 +1,19 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
-import { Navbar, NavbarBrand, NavItem, Nav, NavLink } from 'reactstrap';
+import React, {
+  Component
+} from 'react';
+import {
+  HashRouter as Router,
+  Route,
+  Switch,
+  Link
+} from 'react-router-dom' //HashRouter needs to be replaced with BrowserRouter if node backend exists
+import {
+  Navbar,
+  NavbarBrand,
+  NavItem,
+  Nav,
+  NavLink
+} from 'reactstrap';
 
 import PetitionListView from './Components/PetitionListView'
 import CreatePetitionView from './Components/CreatePetitionView';
@@ -48,34 +61,57 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <Router>
-        <Navbar color="light" light expand="md">
-          <NavbarBrand>Solitude</NavbarBrand>
-          <Nav className="ml-auto" navbar>
-          <NavItem>
-          <NavLink><Link to="/"> Home </Link></NavLink>
-          </NavItem>
-          <NavItem>
-          <NavLink><Link to="/createPetition"> Create a Petition</Link></NavLink>
-          </NavItem>
-          <NavItem>
-          <NavLink><Link to="/viewPetitions"> View all Petitions </Link></NavLink>
-          </NavItem>
-          {/* <CreatePetitionView newPetition={this.newPetition} /> */}
-          {/* <PetitionView petitions={this.state.petitions} /> */}
-          {/* <CreateSignature newSignature={this.newSignature} /> */}
-          </Nav>
-        </Navbar>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/createPetition" render={(props) => <CreatePetitionView {...props} newPetition={this.newPetition} />} />
-          <Route path="/viewPetitions" render={(props) => <PetitionListView {...props} petitions={this.state.petitions} />} />
+    return (<Router >
+      <Navbar color="light" light expand="md" >
+        <NavbarBrand > Solitude </NavbarBrand> <Nav className="ml-auto"
+          navbar >
+          <NavItem >
+            <NavLink > < Link to="/" > Home </Link></NavLink >
+          </NavItem> <NavItem >
+            <NavLink > < Link to="/createPetition" > Create a Petition </Link></NavLink >
+          </NavItem> <NavItem >
+            <        NavLink > < Link to="/viewPetitions" > View all Petitions </Link></NavLink >
+          </NavItem> {
+            /* <CreatePetitionView newPetition={this.newPetition} /> */
+          } {
+            /* <PetitionView petitions={this.state.petitions} /> */
+          } {
+            /* <CreateSignature newSignature={this.newSignature} /> */
+          } </Nav> </    Navbar > <      Switch >
+        <                            Route exact path="/"
+          component={
+            Home
+          }
+        /> <                            Route path="/createPetition"
+          render={
+            (props) => < CreatePetitionView {
+              ...props
+            }
+              newPetition={
+                this.newPetition
+              }
+            />} />
+        <                            Route path="/viewPetitions"
+          render={
+            (props) => < PetitionListView {
+              ...props
+            }
+              petitions={
+                this.state.petitions
+              }
+            />} />
 
-          <Route path="/:id" render={(props) => <PetitionView {...props} newSignature={this.newSignature} />} />
+        <                            Route path="/:id"
+          render={
+            (props) => < PetitionView {
+              ...props
+            }
+              newSignature={
+                this.newSignature
+              }
+            />} />
 
-        </Switch>
-      </Router>
+      </Switch> </Router >
     )
   }
 }
