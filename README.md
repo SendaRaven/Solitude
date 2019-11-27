@@ -11,4 +11,3 @@
 
 3. Plans for the application
 - integrate an express.js-based backend with a MongoDB database instead of localstorage
-- refine layout with reactstrap modals 
