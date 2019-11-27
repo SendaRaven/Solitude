@@ -23,6 +23,7 @@ export default class CreatePetitionView extends Component {
         console.log(this.state);
     };
     handleSubmitButton = () => {
+        if (this.state.title && this.state.description !== "") {       
         let petitions = {
             id: uuid(),
             title: this.state.title,
@@ -32,6 +33,10 @@ export default class CreatePetitionView extends Component {
         console.log(petitions);
 
         this.props.newPetition(petitions);
+        this.props.history.push("/viewPetitions") 
+    } else {
+        alert("Please enter title and description of the petition!")
+    }
     };
     render() {
         return (<div className="body">

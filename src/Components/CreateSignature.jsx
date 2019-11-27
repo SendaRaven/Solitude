@@ -34,19 +34,27 @@ class CreateSignature extends Component {
     }
 
     handleSignatureButton = () => {
-        let signature = {
-            firstName: this.state.firstName,
-            lastName: this.state.lastName,
-            email: this.state.email,
-        }
-        console.log(signature);
-        this.props.newSignature(this.props.petitionId, signature)
+        if (this.state.firstName && this.state.lastName && this.state.email !== "") {
 
-        this.setState({
-            firstName: "",
-            lastName: "",
-            email: "",
-        })
+
+            let signature = {
+                firstName: this.state.firstName,
+                lastName: this.state.lastName,
+                email: this.state.email,
+            }
+            console.log(signature);
+            this.props.newSignature(this.props.petitionId, signature)
+
+            this.setState({
+                firstName: "",
+                lastName: "",
+                email: "",
+            })
+            this.props.toggle()
+        } else {
+            alert("Please fill all input fields!")
+        }
+
     }
 
     render() {
